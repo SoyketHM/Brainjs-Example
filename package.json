@@ -9,6 +9,7 @@
   "author": "soyket",
   "license": "ISC",
   "dependencies": {
+    "brain.js": "^1.6.1",
     "brainjs": "^0.7.4"
   }
 }

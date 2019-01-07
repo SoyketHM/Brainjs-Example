@@ -1,6 +1,6 @@
-const brainjs = require('brainjs');
+const brain = require('brain.js');
 const data = require('./data.json');
-const network = new brainjs.recurrent.LSTM();
+const network = new brain.recurrent.LSTM();
 
 const trainingData = data.map(item => ({
    input: item.match,
@@ -8,9 +8,11 @@ const trainingData = data.map(item => ({
 }));
 
 network.train(trainingData,{
-    iterations: 2000
+    log: true,
+    logPeriod: 100,
+    iterations: 1000
 });
 
-const output = network.run("Chittagong Vikings vs Comilla Victorians");
+const output = network.run("Sylhet Sixers vs Comilla Victorians");
 
 console.log('Winer of the match: ' + output);
