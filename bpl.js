@@ -8,9 +8,8 @@ const trainingData = data.map(item => ({
 }));
 
 network.train(trainingData,{
-    log: true,
-    logPeriod: 100,
-    iterations: 1000
+    log: (error) => console.log(error),
+    logPeriod: 100
 });
 
 const output = network.run("Sylhet Sixers vs Comilla Victorians");
